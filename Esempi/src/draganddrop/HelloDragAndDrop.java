@@ -60,10 +60,13 @@ public class HelloDragAndDrop extends Application {
             setAlignment(Pos.CENTER);
 
             setOnDragDetected(event -> {
+            	System.out.println("setOnDragDetected");
                 if (getItem() == null) {
                     return;
                 }
 
+                System.out.println("setOnDragDetected");
+                
                 ObservableList<String> items = getListView().getItems();
 
                 Dragboard dragboard = startDragAndDrop(TransferMode.MOVE);
@@ -82,7 +85,8 @@ public class HelloDragAndDrop extends Application {
             });
 
             setOnDragOver(event -> {
-                if (event.getGestureSource() != thisCell &&
+            	System.out.println("setOnDragOver");       
+            	if (event.getGestureSource() != thisCell &&
                        event.getDragboard().hasString()) {
                     event.acceptTransferModes(TransferMode.MOVE);
                 }
@@ -91,6 +95,7 @@ public class HelloDragAndDrop extends Application {
             });
 
             setOnDragEntered(event -> {
+            	System.out.println("setOnDragEntered");
                 if (event.getGestureSource() != thisCell &&
                         event.getDragboard().hasString()) {
                     setOpacity(0.3);
@@ -98,6 +103,7 @@ public class HelloDragAndDrop extends Application {
             });
 
             setOnDragExited(event -> {
+            	System.out.println("setOnDragExited");
                 if (event.getGestureSource() != thisCell &&
                         event.getDragboard().hasString()) {
                     setOpacity(1);
@@ -105,6 +111,7 @@ public class HelloDragAndDrop extends Application {
             });
 
             setOnDragDropped(event -> {
+            	System.out.println("setOnDragDropped");
                 if (getItem() == null) {
                     return;
                 }
@@ -126,7 +133,7 @@ public class HelloDragAndDrop extends Application {
 
                     List<String> itemscopy = new ArrayList<>(getListView().getItems());
                     getListView().getItems().setAll(itemscopy);
-
+        
                     success = true;
                 }
                 event.setDropCompleted(success);
