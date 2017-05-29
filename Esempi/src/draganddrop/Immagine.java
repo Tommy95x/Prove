@@ -80,12 +80,16 @@ public class Immagine extends ImageView{
             
         });
         
-        setOnDragDone(DragEvent::consume);
+        
+        
+        setOnDragDone(event ->{
+        	box.getChildren().add(new Immagine(im));
+        });
 	}
 
-	public void getBox(HBox box, DragAndDrop dragAndDrop) {
+	public void getBox(HBox box) {
 		this.box=box;
-		this.dragAndDrop=dragAndDrop;
+		
 	}
 	
 	 	

@@ -3,7 +3,6 @@ package draganddrop;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
@@ -19,9 +18,13 @@ public class DragAndDrop extends Application {
 		Image im = new Image(getClass().getResourceAsStream("Omino bianco.jpg"));
 		Immagine view = new Immagine(im);
 		box.getChildren().add(view);
-		view.getBox(box, this);
-		
-		
+		view.getBox(box);
+		/*box.setOnDragEntered(event ->{
+			box.getChildren().add(new Immagine(im));
+		});*/
+		box.setOnMouseDragReleased(event ->{
+			box.getChildren().add(new Immagine(im));
+		});
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
@@ -35,4 +38,5 @@ public class DragAndDrop extends Application {
 		stage.show();
 		System.out.println("End");
 	}
+	
 }
