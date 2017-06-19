@@ -2,6 +2,8 @@ package draganddrop;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
@@ -17,7 +19,8 @@ public class DragAndDrop extends Application {
 		Scene scene = new Scene(box);
 		Image im = new Image(getClass().getResourceAsStream("Omino bianco.jpg"));
 		Immagine view = new Immagine(im);
-		box.getChildren().add(view);
+		Tooltip.install(view, new Tooltip("prova"));
+		box.getChildren().addAll(view);
 		view.getBox(box);
 		/*box.setOnDragEntered(event ->{
 			box.getChildren().add(new Immagine(im));

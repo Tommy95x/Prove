@@ -4,6 +4,7 @@ import java.io.InputStream;
 
 import javafx.scene.Scene;
 import javafx.scene.control.ContentDisplay;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.ClipboardContent;
@@ -16,6 +17,7 @@ public class Immagine extends ImageView{
 
 	private HBox box;
 	private DragAndDrop dragAndDrop;
+	private Tooltip tooltip;
 	
 	public Immagine(Image im) {
 		super(im);
@@ -90,6 +92,14 @@ public class Immagine extends ImageView{
 	public void getBox(HBox box) {
 		this.box=box;
 		
+	}
+
+	public Tooltip getTooltip() {
+		return tooltip;
+	}
+
+	public void setTooltip(Tooltip tooltip) {
+		this.tooltip = tooltip;
 	}
 	
 	 	

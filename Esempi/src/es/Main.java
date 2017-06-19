@@ -18,6 +18,7 @@ public class Main{
 		System.out.println(p.getName()+" "+p.getSurname());
 		w=solo;
 		System.out.println(w.getName()+" "+w.getSurname());
+		System.out.println(s.getProva());
 	}
 
 }
